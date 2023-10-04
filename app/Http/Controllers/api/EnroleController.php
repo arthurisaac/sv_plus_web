@@ -27,7 +27,9 @@ class EnroleController extends Controller
             ], 422);
         }
 
-        $enrole = Enrole::with("Personne_a_prevenir")->where("uniq", $request->get("uniq"))->get([
+        $enrole = Enrole::with("Personne_a_prevenir")
+        ->with("Antecedants")
+        ->where("uniq", $request->get("uniq"))->get([
             'id',
             'nom',
             'prenom',
@@ -39,6 +41,10 @@ class EnroleController extends Controller
             'telephone',
             'package',
             'avatar',
+            'balance',
+            'groupe_sanguin',
+            'electrophorese',
+            'maladie_particuliere',
             'created_at',
         ])->first();
 

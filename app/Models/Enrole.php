@@ -12,4 +12,13 @@ class Enrole extends Model
     public function Personne_a_prevenir() {
         return $this->hasMany(Personne_prevenir::class, 'id_enrole');
     }
+
+    public function Antecedants() {
+        return $this->hasMany(Antecedant::class, 'id_enrole');
+    }
+
+    public function getBalanceAttribute(){
+
+        return number_format($this->attributes['balance'], 2, ",", " ");
+    }
 }
