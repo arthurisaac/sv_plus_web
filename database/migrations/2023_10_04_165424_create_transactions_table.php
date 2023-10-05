@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer("sender");
             $table->integer("receiver");
             $table->double("amount")->default(0)->nullable();
+            $table->enum("type", array("depot", "retrait", "transfert"));
             $table->string("description")->nullable();
             $table->timestamps();
         });

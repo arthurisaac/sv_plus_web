@@ -7,6 +7,7 @@ use App\Http\Controllers\api\AlerteSanteStructure;
 use App\Http\Controllers\api\DiscussionController;
 use App\Http\Controllers\api\EnroleController;
 use App\Http\Controllers\api\SliderController;
+use App\Http\Controllers\api\TransactionController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +50,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     // Ressuorces discussions
     Route::resource('alerte_sante_structure', AlerteSanteStructure::class);
+
+    // Ressuorces discussions
+    Route::resource('transactions', TransactionController::class);
 
     //
     // Route::post('messages', [AlerteMessageController::class, 'store']);
