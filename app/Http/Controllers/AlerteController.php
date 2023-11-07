@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Alerte;
 use App\Models\Ambulance;
-use App\Notifications\AlerteNotification;
 use Illuminate\Http\Request;
 
 class AlerteController extends Controller
