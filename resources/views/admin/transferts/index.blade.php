@@ -5,11 +5,11 @@
         <div class="row justify-content-center">
             <div class="container">
                 <div class="card">
-                    <div class="card-header">{{ __('Sliders') }}</div>
+                    <div class="card-header">{{ __('Transferts') }}</div>
 
 
                     <div class="container mt-5">
-                        <a href="{{ route("sliders.create") }}" class="btn btn-primary">Ajouter +</a>
+                        <a href="" class="btn btn-primary">Ajouter +</a>
                         <table class="table table-responsive table-bordered">
                             <thead>
                             <tr>
@@ -21,21 +21,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($sliders as $slider)
-                                <tr>
-                                    <td>{{ $loop->index+1  }}</td>
-                                    <td>{{ $slider->title }}</td>
-                                    <td>{{ $slider->file }}</td>
-                                    <td>{{ $slider->created_at }}</td>
-                                    <td>
-                                        <form action="{{ route('sliders.destroy', $slider->id)}}" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-danger" type="submit">Supprimer</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
+
                             </tbody>
                         </table>
                     </div>

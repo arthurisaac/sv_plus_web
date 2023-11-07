@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\AlerteController;
 use App\Http\Controllers\AlerteDiscussionController;
 use App\Http\Controllers\AlerteNotificationController;
@@ -29,6 +30,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('aut
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+
+    Route::get('/', [AdminHomeController::class, 'home'])->name('admin');
     // resources alerts
     Route::resource('alertes', AlerteController::class);
 
